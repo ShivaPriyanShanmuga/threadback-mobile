@@ -1,5 +1,11 @@
 # Changelog
 
+## Private phone access resolved — 2026-11-01
+
+- Granted private viewer access on the existing hosted app to the tester's approved account, resolving its 403. Verified the actual app loads under that account in Chrome.
+- Updated iPhone instructions to use the approved viewer account. Phone camera/voice/tracking tests remain pending.
+- Stopped the optional Cloudflare migration at the user's request. No card, bank information, payment authorization, or new Cloudflare service activation was used.
+
 ## Private Cloudflare deployment preparation — 2026-11-01
 
 - Added a separate Workers deployment for the existing app, using Cloudflare Access JWT verification and an exact-email check before every static asset.

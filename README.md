@@ -8,7 +8,7 @@ Built for **Arbiter Hacks V1 — General Track**. This is a new phone implementa
 
 [![Check Threadback](https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/workflows/check.yml/badge.svg)](https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/workflows/check.yml)
 
-[Open the first build](https://threadback-workspace.wirylapel.chatgpt.site) · currently private to the owning ChatGPT account.
+[Open Threadback](https://threadback-workspace.wirylapel.chatgpt.site) · private to approved ChatGPT accounts. On iPhone, open this link in Safari and sign in with an account granted access.
 
 ![Illustrated example workspace with real Threadback UI](docs/images/workspace.png)
 
@@ -29,7 +29,7 @@ The core workspace is implemented: create tasks, review typed/voice checkpoints,
 
 ## Architecture
 
-Private deployment on the user's own Cloudflare account is being prepared in [deployments/cloudflare](deployments/cloudflare/README.md). It uses Cloudflare Access plus a signed-token and exact-email check before serving app assets. The existing Sites link remains private. A new Cloudflare URL will be recorded only after live access verification.
+An optional, tested Cloudflare deployment scaffold is retained in [deployments/cloudflare](deployments/cloudflare/README.md). It has not been deployed. The active phone-testing link uses the existing private Sites hosting; access was granted to the tester's usual account and verified in the live browser. No card, bank information, or Cloudflare billing setup is required for this route.
 
 - Buildless HTML/CSS/ES modules; camera capture through `getUserMedia`.
 - Local task state and snapshots; no account required for local data.

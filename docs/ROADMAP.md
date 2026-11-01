@@ -32,8 +32,8 @@
 No item is marked complete without evidence. Hackathon results and judging are external; completing the entry cannot guarantee a win.
 
 
-Live build: https://threadback-workspace.wirylapel.chatgpt.site (owner-private).
+Live build: https://threadback-workspace.wirylapel.chatgpt.site (private to approved accounts).
 GitHub CI passed for implementation commit 0260a0149e862d66563361a3f6ba14e71fdf915a: https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/runs/41308447757
 Camera/voice and tracking are implemented, but their working-product boxes remain unchecked until actual iPhone verification.
 
-Devpost draft creation succeeded after refreshing the reCAPTCHA connection failure. The final terms checkbox remains unchecked and the video URL is empty. No track selector was present in the inspected registration/finalization forms; confirm General routing before submitting. Hosting remains private by explicit user preference; phone testing needs the owning ChatGPT account, as the current Chrome account is denied access.
+Devpost draft creation succeeded after refreshing the reCAPTCHA connection failure. The final terms checkbox remains unchecked and the video URL is empty. No track selector was present in the inspected registration/finalization forms; confirm General routing before submitting. Hosting remains private by explicit user preference. A private viewer grant resolved the tester's 403 and the live app opened successfully under that account in Chrome. Actual iPhone checks remain pending.

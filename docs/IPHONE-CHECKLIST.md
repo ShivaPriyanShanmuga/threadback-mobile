@@ -1,6 +1,6 @@
 # Actual iPhone test checklist
 
-Open https://threadback-workspace.wirylapel.chatgpt.site in Safari. The first deployment is owner-private, so sign in with the owning ChatGPT account if prompted. Desktop task data will not automatically appear on the phone: storage is local to each browser. Use a new workspace or import an exported backup.
+Open https://threadback-workspace.wirylapel.chatgpt.site in Safari. Sign in with the ChatGPT account that was granted private viewer access. Access with the tester's usual account has been verified in desktop Chrome; this does not establish iPhone compatibility. No card, bank information, installation, or Cloudflare setup is needed. Desktop task data will not automatically appear on the phone: storage is local to each browser. Use a new workspace or import an exported backup.
 
 1. Create a short workspace and mark its first step done.
 2. Tap **Use camera** and allow the camera for this app. Confirm a live rear-camera image appears.

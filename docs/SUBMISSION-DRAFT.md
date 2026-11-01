@@ -29,7 +29,7 @@ Complete actual iPhone validation, improve viewpoint/lighting robustness, add op
 
 ## Submission checklist
 - Public source: https://github.com/ShivaPriyanShanmuga/threadback-mobile
-- Working URL: https://threadback-workspace.wirylapel.chatgpt.site (currently owner-private; judge access must be resolved before submission)
+- Working URL: https://threadback-workspace.wirylapel.chatgpt.site (currently private to approved accounts; judge access must be resolved before submission)
 - Video URL: pending real working-demo recording and upload
 - Track: General
 - Required eligibility/agreements: not yet reviewed in the final submission form
@@ -41,5 +41,5 @@ Complete actual iPhone validation, improve viewpoint/lighting robustness, add op
 - Verified state: DRAFT, 3/4 steps done; story, repository link, JavaScript tag, and two labeled screenshots saved and previewed.
 - The final form requires agreement to the Official Rules and Devpost Terms of Service. It remains unchecked; no submission receipt exists.
 - No track-selection field was present in the registration editor or finalization page when inspected. General is the intended track and must be made explicit in the description; verify routing before final submission.
-- Live app access remains private at the user's request. Chrome's current ChatGPT account receives a 403; use the owning account for phone tests.
+- Live app access remains private at the user's request. The tester's usual ChatGPT account now has private viewer access, and the live app opened successfully in Chrome. Actual iPhone checks remain pending.
 
