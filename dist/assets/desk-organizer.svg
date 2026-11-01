@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Partially assembled wooden desk organizer</title>
+  <desc id="desc">Illustrative example workspace, not a photograph or live camera image. A pale wooden organizer rests on a sage cutting mat with loose dividers to its right, hardware to its lower left, a glue bottle, pencil, and paper clips.</desc>
+  <metadata>Threadback illustrative example. Editable code-native vector artwork. Nominal object centers in viewBox coordinates: organizer base 577.5,419; loose divider pair 876,442; hardware 291,521; glue 1011,251.</metadata>
+  <defs>
+    <linearGradient id="desk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f1ede3"/><stop offset="1" stop-color="#d9d3c5"/></linearGradient>
+    <linearGradient id="mat" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#a3b4a0"/><stop offset="1" stop-color="#718d7d"/></linearGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2=".9" y2="1"><stop stop-color="#f7e6c3"/><stop offset=".6" stop-color="#e8cea0"/><stop offset="1" stop-color="#dcb986"/></linearGradient>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f7e6c7"/><stop offset="1" stop-color="#d7b17c"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#c29863"/><stop offset=".5" stop-color="#deba87"/><stop offset="1" stop-color="#b98b57"/></linearGradient>
+    <linearGradient id="bottle" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#d8ddd2"/><stop offset=".4" stop-color="#fbfcf2"/><stop offset="1" stop-color="#c4cdbf"/></linearGradient>
+    <radialGradient id="light" cx=".1" cy="0" r="1"><stop stop-color="#fffdf6" stop-opacity=".6"/><stop offset="1" stop-color="#fffdf6" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="38" height="38" patternUnits="userSpaceOnUse" patternTransform="matrix(1 -.072 .2 .95 0 0)"><path d="M38 0H0V38" fill="none" stroke="#e8f1dc" stroke-opacity=".24" stroke-width="1"/><path d="M19 0V38M0 19H38" fill="none" stroke="#e8f1dc" stroke-opacity=".08" stroke-width=".7"/></pattern>
+    <pattern id="grain" width="100" height="21" patternUnits="userSpaceOnUse" patternTransform="rotate(-11)"><path d="M-20 5Q20 1 58 5T120 5M-20 11Q18 8 49 11T120 11M-20 17Q35 14 70 17T120 17" stroke="#ac7842" stroke-opacity=".16" stroke-width=".8" fill="none"/></pattern>
+    <filter id="softShadow" x="-30%" y="-40%" width="170%" height="200%"><feDropShadow dx="9" dy="17" stdDeviation="17" flood-color="#253d32" flood-opacity=".22"/></filter>
+    <filter id="smallShadow" x="-40%" y="-40%" width="190%" height="210%"><feDropShadow dx="5" dy="8" stdDeviation="5" flood-color="#28372e" flood-opacity=".22"/></filter>
+    <clipPath id="matClip"><path d="M164 172Q157 146 182 144L988 100Q1014 99 1020 125L1111 602Q1116 626 1090 629L259 689Q235 691 230 667Z"/></clipPath>
+    <clipPath id="baseClip"><path d="M350 365L665 302 805 473 490 536Z"/></clipPath>
+    <clipPath id="backClip"><path d="M350 289L665 226 665 302 350 365Z"/></clipPath>
+    <clipPath id="leftClip"><path d="M350 289L490 460 490 536 350 365Z"/></clipPath>
+  </defs>
+
+  <path fill="url(#desk)" d="M0 0H1200V760H0Z"/>
+  <g fill="none" stroke="#a29982" stroke-opacity=".11"><path d="M0 43L1200 117M0 50L1200 124M0 290L1200 365M0 534L1200 608M0 541L1200 615"/><path d="M93 0L138 760M1045 0L1090 760" stroke-width="2"/></g>
+  <path d="M0 0H1200V760H0Z" fill="url(#light)"/>
+  <path d="M164 172Q157 146 182 144L988 100Q1014 99 1020 125L1111 602Q1116 626 1090 629L259 689Q235 691 230 667Z" fill="#526b5d" opacity=".14" transform="translate(4 9)" filter="url(#smallShadow)"/>
+  <path d="M164 172Q157 146 182 144L988 100Q1014 99 1020 125L1111 602Q1116 626 1090 629L259 689Q235 691 230 667Z" fill="url(#mat)"/>
+  <g clip-path="url(#matClip)">
+    <path d="M130 90H1145V710H130Z" fill="url(#grid)"/>
+    <path d="M192 163L1001 119 1093 611 249 671Z" fill="none" stroke="#d9e4cf" stroke-opacity=".4" stroke-width="1.1"/>
+    <path d="M211 182L983 140 1071 592 265 650Z" fill="none" stroke="#d9e4cf" stroke-opacity=".23"/>
+    <g stroke="#dce8d3" stroke-opacity=".25"><path d="M640 378h26m-13-13v26"/><circle cx="653" cy="378" r="51" fill="none"/><circle cx="653" cy="378" r="102" fill="none" stroke-dasharray="2 8"/></g>
+    <g stroke="#eff5e8" stroke-opacity=".32" stroke-width="1"><path d="M300 162l2 11m76-16 2 11m76-16 2 11m76-15 2 11m76-15 2 11m76-15 2 11m76-16 2 11m76-16 2 11m76-15 2 11"/><path d="M1055 583l-12 1m-2-77-12 1m-2-77-12 1m-2-77-12 1m-2-77-12 1"/></g>
+  </g>
+
+  <!-- A small unlabelled planning sheet partly beneath the organizer. -->
+  <g transform="translate(246 215) rotate(-7)" filter="url(#smallShadow)">
+    <rect width="168" height="221" rx="3" fill="#f5f0df"/>
+    <path d="M21 30h72m-72 10h119" stroke="#b6b6a0" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+    <g fill="none" stroke="#81988c" stroke-width="1.3" opacity=".66"><path d="M28 93L109 78 141 111 60 128ZM28 93V69L109 54V78M28 69L60 102V128M109 54L141 87V111M60 102L141 87"/><path d="M23 155h97m-97 15h75m-75 15h106" stroke-dasharray="2 4" opacity=".7"/></g>
+  </g>
+
+  <!-- Organizer: the floor's geometric center is (577.5,419). -->
+  <g filter="url(#softShadow)">
+    <path d="M350 365L665 302 805 473 490 536Z" fill="url(#wood)"/>
+    <path d="M350 365L665 302 805 473 490 536Z" fill="url(#grain)"/>
+    <path d="M490 536L805 473V491L490 554Z" fill="url(#edge)"/>
+    <path d="M350 365L490 536V554L350 383Z" fill="#c49c66"/>
+    <path d="M350 365L665 302 805 473 490 536Z" fill="none" stroke="#faedce" stroke-width="2"/>
+    <g clip-path="url(#baseClip)" stroke="#b38d59" fill="none" opacity=".3"><path d="M325 399L747 315M354 432L775 348M389 466L804 383M420 501L831 419" stroke-width="1"/><path d="M606 287L755 489" stroke-width="2.8" stroke-dasharray="2 7"/><path d="M611 287L760 489" stroke="#fff0ce" stroke-width="1"/></g>
+    <path d="M350 289L665 226V302L350 365Z" fill="url(#wall)"/>
+    <g clip-path="url(#backClip)" stroke="#af804c" stroke-opacity=".24" fill="none"><path d="M330 308Q470 275 687 244M330 323Q482 289 687 258M330 338Q488 304 687 273M330 352Q488 320 687 288"/><ellipse cx="577" cy="271" rx="16" ry="3" transform="rotate(-11 577 271)"/></g>
+    <path d="M350 289L665 226 674 233 359 296Z" fill="#f9edce"/>
+    <path d="M665 226L674 233V309L665 302Z" fill="#b98f5c"/>
+    <path d="M350 289L490 460V536L350 365Z" fill="url(#wall)"/>
+    <g clip-path="url(#leftClip)" fill="none" stroke="#b58a54" stroke-opacity=".28"><path d="M342 309L500 502M342 327L500 520M342 346L500 539"/><ellipse cx="428" cy="447" rx="4" ry="13" transform="rotate(-39 428 447)"/></g>
+    <path d="M350 289L359 286 499 457 490 460Z" fill="#fff0d1"/>
+    <path d="M490 460L499 457V533L490 536Z" fill="#bb925d"/>
+    <path d="M350 289V365" stroke="#fff1d6" stroke-width="2"/>
+    <!-- One already fitted partition; the second remains loose. -->
+    <path d="M598 315L680 415V475L598 375Z" fill="#d1ab76"/>
+    <path d="M598 315L607 313 689 413 680 415Z" fill="#fff0ce"/>
+    <path d="M680 415L689 413V473L680 475Z" fill="#b58d59"/>
+    <path d="M610 341L670 414M610 355L670 428M610 368L670 441" stroke="#b58851" stroke-width="1" opacity=".33"/>
+    <path d="M503 533L791 475" stroke="#b28c58" stroke-opacity=".55"/>
+  </g>
+
+  <!-- Loose divider boards; their combined silhouette centers near (876,442). -->
+  <g filter="url(#smallShadow)">
+    <path d="M805 395L915 373 947 414 837 436Z" fill="url(#wood)"/>
+    <path d="M837 436L947 414V425L837 447Z" fill="#be9561"/>
+    <path d="M805 395L837 436V447L805 406Z" fill="#d0aa76"/>
+    <path d="M805 395L915 373 947 414 837 436Z" fill="url(#grain)" stroke="#fff0d0" stroke-width="1"/>
+    <path d="M819 407L927 385M829 419L938 397" stroke="#b28c58" opacity=".22"/>
+    <path d="M803 470L913 448 945 489 835 511Z" fill="url(#wood)"/>
+    <path d="M835 511L945 489V500L835 522Z" fill="#be9561"/>
+    <path d="M803 470L835 511V522L803 481Z" fill="#d0aa76"/>
+    <path d="M803 470L913 448 945 489 835 511Z" fill="url(#grain)" stroke="#fff0d0" stroke-width="1"/>
+    <path d="M819 483L929 461M829 495L938 474" stroke="#b28c58" opacity=".22"/>
+    <circle cx="830" cy="397" r="2.2" fill="#b28c58"/><circle cx="830" cy="472" r="2.2" fill="#b28c58"/>
+  </g>
+
+  <!-- Hardware and clips: centered near (291,521). -->
+  <g filter="url(#smallShadow)">
+    <g transform="translate(250 476) rotate(-15)"><rect width="70" height="83" rx="11" fill="#e5eadc" fill-opacity=".68" stroke="#f3f6e9" stroke-opacity=".7"/><rect x="6" y="7" width="58" height="69" rx="7" fill="#557165" fill-opacity=".12"/>
+      <g fill="#b8b5a2" stroke="#737d70" stroke-width="1"><path d="M19 19l18 8-3 6-18-8Z"/><path d="M29 43l18-11 4 6-18 11Z"/><path d="M14 56l24 1v6l-24-1Z"/></g>
+      <g fill="none" stroke="#eef0d7" stroke-width="1"><path d="M18 21l18 8M31 45l17-10M15 58l22 1"/></g>
+    </g>
+    <g fill="none" stroke="#c7c4ad" stroke-width="3"><ellipse cx="334" cy="521" rx="8" ry="6"/><ellipse cx="313" cy="571" rx="7" ry="5"/></g>
+    <g stroke-linecap="round" stroke-width="4"><path d="M340 551l16-12" stroke="#6b7568"/><path d="M341 550l13-10" stroke="#cbd0bc" stroke-width="1.5"/><path d="M252 573l13 8" stroke="#6b7568"/><path d="M253 572l12 7" stroke="#cbd0bc" stroke-width="1.5"/></g>
+  </g>
+
+  <!-- Glue bottle, with a blank label rather than interface text. -->
+  <g transform="translate(979 185) rotate(-10 33 60)" filter="url(#smallShadow)">
+    <ellipse cx="34" cy="112" rx="34" ry="11" fill="#385246" opacity=".15"/>
+    <path d="M7 44Q7 35 16 30L22 25H46L52 30Q61 35 61 44V100Q61 113 34 113T7 100Z" fill="url(#bottle)"/>
+    <ellipse cx="34" cy="38" rx="25" ry="8" fill="#f8f9e9" opacity=".5"/>
+    <path d="M22 25V11Q22 6 27 6H41Q46 6 46 11V25Z" fill="#d5a45c"/>
+    <path d="M27 6L31-11Q34-17 37-11L41 6Z" fill="#e8c380"/>
+    <rect x="13" y="53" width="42" height="34" rx="4" fill="#e7d5a4"/>
+    <path d="M27 68Q34 57 41 68Q39 79 34 79T27 68Z" fill="#bfa16c" opacity=".7"/>
+    <path d="M14 42V96" stroke="#fffef3" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+  </g>
+
+  <!-- Pencil and a pair of loose paper clips. -->
+  <g transform="translate(547 627) rotate(-12)" filter="url(#smallShadow)"><path d="M0-6H177V6H0Z" fill="#d7a35d"/><path d="M0-6H177V-2H0Z" fill="#f5cc87"/><path d="M0 3H177V6H0Z" fill="#ad7d40"/><path d="M177-6L203 0 177 6Z" fill="#eddbb1"/><path d="M197-1.5L203 0 197 1.5Z" fill="#495747"/><path d="M0-6H-11Q-17-6-17 0T-11 6H0Z" fill="#bf9c8e"/><path d="M0-6H8V6H0Z" fill="#b8b9a3"/></g>
+  <g fill="none" stroke="#dbc28b" stroke-width="3" stroke-linecap="round" filter="url(#smallShadow)"><path d="M902 586l20-24q10-12 17-4t-2 18l-25 30q-13 16-23 6t2-25l23-28"/><path d="M954 588l16-19q7-9 13-3t-1 14l-20 23q-10 12-18 4t2-18l17-21" stroke="#b9c8b6"/></g>
+  <path d="M97 670Q286 724 478 723" fill="none" stroke="#fffaf0" stroke-width="2" stroke-opacity=".35"/>
+</svg>

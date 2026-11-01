@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101713"><meta name="description" content="A visual bookmark for unfinished physical work. Capture where you left off and return with a clear next move.">
+  <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Threadback — Pick up your thread</title>
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to workspace</a>
+<svg class="icon-defs" xmlns="http://www.w3.org/2000/svg"><defs>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h4l2-3h4l2 3h4v13H4z"/><circle cx="12" cy="13" r="4"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11v1a7 7 0 0 0 14 0v-1M12 19v3M8 22h8"/></symbol>
+  <symbol id="i-history" viewBox="0 0 24 24"><path d="M3 11a9 9 0 1 1 2 7M3 4v7h7M12 7v5l3 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M18 10c0 5-6 11-6 11S6 15 6 10a6 6 0 1 1 12 0Z"/><circle cx="12" cy="10" r="2"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 8V3h5m8 0h5v5M3 16v5h5m8 0h5v-5M3 12h18"/></symbol>
+  <symbol id="i-note" viewBox="0 0 24 24"><path d="M5 3h14v18H5zM8 8h8M8 12h8M8 16h5"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 15v6h16v-6"/></symbol>
+  <symbol id="i-volume" viewBox="0 0 24 24"><path d="M4 9h4l5-5v16l-5-5H4zM17 8a6 6 0 0 1 0 8M20 5a10 10 0 0 1 0 14"/></symbol>
+</defs></svg>
+<aside class="sidebar">
+  <a href="/" class="brand" aria-label="Threadback home"><img src="/assets/icon.svg" alt="" width="38" height="38"><span>threadback<span class="brand-dot">.</span></span></a>
+  <div class="side-label">YOUR SPACE</div>
+  <nav aria-label="Main navigation">
+    <button class="nav-item selected" id="workspace-nav"><svg><use href="#i-grid"/></svg>Workspace<span class="nav-dot"></span></button>
+    <button class="nav-item" id="history-nav"><svg><use href="#i-history"/></svg>Checkpoints<span id="history-count" class="count">1</span></button>
+    <button class="nav-item" id="guide-nav"><svg><use href="#i-note"/></svg>How it works</button>
+  </nav>
+  <div class="side-heading"><span class="side-label">WORKSPACES</span><button class="icon-button" id="new-side" aria-label="New workspace"><svg><use href="#i-plus"/></svg></button></div>
+  <div id="task-list" class="task-list"></div>
+  <div class="sidebar-bottom"><div class="local-indicator"><span></span> Saved on this device</div><button class="nav-item" id="settings-nav"><svg><use href="#i-settings"/></svg>Settings & backup</button><a class="repo-link" href="https://github.com/ShivaPriyanShanmuga/threadback-mobile" target="_blank" rel="noopener">Built in the open <span>↗</span></a></div>
+</aside>
+<main id="main">
+  <header class="topbar"><div class="breadcrumbs">Your space <span>/</span> <strong>Workspace</strong></div><div class="top-actions"><span class="device-note"><span></span> Local-first workspace</span><button class="button compact" id="new-top"><svg><use href="#i-plus"/></svg>New workspace</button></div></header>
+  <section class="intro"><div><div class="eyebrow"><span class="tiny-thread">↝</span> LESS RECALL. MORE FLOW.</div><h1>Pick up your thread<span>.</span></h1><p>Your work, remembered. Right where you left it.</p></div><button class="button quiet" id="tour-button"><svg><use href="#i-play"/></svg>See how it works</button></section>
+  <div class="example-banner" id="example-banner"><span><strong>Explore an example</strong><span class="banner-detail"> — an illustrated workspace with a saved interruption.</span></span><button id="start-own">Start your own <span>↗</span></button></div>
+  <section class="work-grid">
+    <div class="workspace-column">
+      <div class="section-heading"><div class="task-heading"><span class="project-swatch"></span><h2 id="task-title">Build a desk organizer</h2><button id="edit-task" class="text-button">Edit</button></div><span class="state-pill" id="task-status">Paused</span></div>
+      <div class="viewport" id="viewport">
+        <div class="media-plane" id="media-plane">
+          <img id="scene" src="/assets/desk-organizer.svg" alt="Illustrated example of a partially assembled desk organizer" draggable="false">
+          <video id="camera" muted playsinline autoplay hidden></video>
+          <img id="ghost" alt="Last saved checkpoint, shown translucently for comparison" hidden>
+          <svg id="overlay" viewBox="0 0 1200 760" preserveAspectRatio="none" aria-label="Workspace markers"></svg>
+        </div>
+        <div class="view-top"><span class="view-tag" id="view-tag"><span></span> EXAMPLE WORKSPACE</span><button class="glass-button" id="camera-button"><svg><use href="#i-camera"/></svg><span>Use camera</span></button></div>
+        <div class="scan-sweep" id="scan-sweep" hidden></div>
+        <div class="scene-hint" id="scene-hint"><svg><use href="#i-pin"/></svg><span>Progress has a place.</span></div>
+        <div class="view-bottom"><span id="tracking-status" class="tracking-chip">Illustration · markers are examples</span><div class="view-controls"><button class="glass-button icon-only" id="upload-photo" aria-label="Open a workspace photo"><svg><use href="#i-upload"/></svg></button><button class="glass-button" id="align-button"><svg><use href="#i-scan"/></svg><span>Align</span></button><button class="glass-button" id="ghost-button" aria-pressed="false"><svg><use href="#i-history"/></svg><span>Before</span></button></div></div>
+      </div>
+      <div class="workspace-footer"><div class="legend"><span><i class="done-dot"></i>Done</span><span><i class="active-dot"></i>In progress</span><span><i class="todo-dot"></i>Up next</span></div><button class="text-button" id="pin-button"><svg><use href="#i-pin"/></svg>Place a marker</button></div>
+      <div class="checkpoint-bar"><div class="checkpoint-icon"><svg><use href="#i-mic"/></svg></div><div class="checkpoint-copy"><strong>Leave a thought. Keep your flow.</strong><span>“The dividers are positioned, but I haven’t glued them.”</span></div><button class="button primary" id="checkpoint-button"><svg><use href="#i-plus"/></svg><span>Save checkpoint</span></button></div>
+      <div class="steps-section"><div class="section-heading"><h2>The thread so far</h2><span id="step-count" class="muted">1 of 4 steps complete</span></div><div class="step-track" id="steps"></div></div>
+    </div>
+    <aside class="context-column" aria-label="Task memory">
+      <section class="next-card"><div class="card-kicker"><span class="spark">✳</span> YOUR NEXT MOVE <button id="speak-button" class="icon-button" aria-label="Read resume summary aloud"><svg><use href="#i-volume"/></svg></button></div><div class="next-number" id="next-number">02 <span>/ 04</span></div><h3 id="next-action">Glue the left divider.</h3><p id="next-description">A clear next step, without retracing your work.</p><button class="button dark full" id="resume-button">Resume workspace<svg><use href="#i-arrow"/></svg></button><div class="next-card-foot"><span></span><span id="resume-time">Your last checkpoint is ready</span></div></section>
+      <section class="unfinished-card"><div class="card-kicker"><span class="amber-dot"></span> THE DETAIL THAT MATTERS</div><p id="unfinished-detail">Dividers positioned, but not glued.</p><div class="note-source" id="note-source"><svg><use href="#i-mic"/></svg>Your confirmed note<span id="note-time">27 min ago</span></div></section>
+      <section class="progress-card"><div class="section-heading"><h3>A little further along</h3><span id="progress-value">25%</span></div><div class="progress-bar"><div id="progress-fill"></div></div><div class="progress-caption"><span id="progress-caption">1 step down. 3 to go.</span><svg><use href="#i-check"/></svg></div></section>
+      <section class="last-card"><div class="section-heading"><h3>Last checkpoint</h3><button class="text-button" id="all-history">View all ↗</button></div><button class="checkpoint-preview" id="last-checkpoint"><div class="preview-thumb"><img id="last-thumb" src="/assets/desk-organizer.svg" alt="Example workspace illustration"><span><svg><use href="#i-history"/></svg></span></div><div class="preview-description"><strong id="last-label">Ready when you are.</strong><span id="last-time">Saved 27 minutes ago</span></div></button></section>
+      <div class="small-promise"><span>↝</span> You don’t have to remember everything.</div>
+    </aside>
+  </section>
+  <footer class="page-footer"><span>threadback <i>↝</i> A bookmark for your real world.</span><button class="text-button" id="privacy-button">Your data stays yours</button></footer>
+</main>
+<dialog id="dialog"><div class="dialog-head"><div><div class="eyebrow" id="dialog-eyebrow">THREADBACK</div><h2 id="dialog-title"></h2></div><button id="close-dialog" class="icon-button" aria-label="Close dialog"><svg><use href="#i-close"/></svg></button></div><div id="dialog-body"></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<input type="file" id="photo-input" accept="image/jpeg,image/png,image/webp" hidden><input type="file" id="backup-input" accept="application/json,.json" hidden>
+<script src="/assets/jsfeat-min.js" defer></script><script type="module" src="/app.mjs"></script>
+</body></html>
