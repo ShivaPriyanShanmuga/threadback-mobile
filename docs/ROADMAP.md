@@ -16,6 +16,7 @@
 - [x] State tests: persistence, conflicting notes, undo, import validation.
 - [x] Tracker tests: known transforms, unrelated frames, insufficient features.
 - [x] Desktop browser full task lifecycle.
+- [x] Multi-step unresolved-detail regression and content-free device reporting (23 automated tests; desktop storage probe verified).
 - [ ] Actual iPhone camera, microphone, storage, reload, and tracking checks.
 - [x] HTTPS deployment confirmed.
 

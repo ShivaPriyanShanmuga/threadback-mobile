@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 — 2026-11-01
+
+- Keep earlier unfinished details visible when another step becomes active, including in the resume summary and read-aloud text.
+- Avoid suggesting completion for notes that also record unfinished work.
+- Add content-free device diagnostics in Settings, with observed camera/voice/tracking outcomes and an explicit temporary storage probe.
+- Improve backup download compatibility by attaching the download link before activation.
+- Pass 23 automated tests; verify multi-step resume and the storage probe through desktop browser UI. Real iPhone validation remains pending.
+
 ## 2026-11-01
 
 - Selected Threadback phone implementation for Arbiter Hacks V1 General Track.

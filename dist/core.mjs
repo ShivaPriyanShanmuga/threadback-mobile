@@ -20,9 +20,11 @@ export function resumePacket(task) {
   const completedEvent = [...task.events].reverse().find(e=>e.type==='step'&&e.status==='done'&&task.steps.some(s=>s.id===e.stepId&&s.status==='done'));
   const done = task.steps.find(s=>s.id===completedEvent?.stepId) || [...task.steps].reverse().find(s=>s.status==='done');
   const last = task.checkpoints.at(-1);
+  const openDetails = task.steps.filter(s=>s.status!=='done' && s.detail).map(s=>({stepId:s.id,stepTitle:s.title,detail:s.detail,next:s.next}));
+  const otherUnfinished = openDetails.filter(s=>s.stepId!==active?.id);
   return {lastCompleted:done?.title || 'No step completed yet',unfinished:active?.detail || '',
     nextAction:active?.next || (active ? active.title : 'All steps are complete. Review your finished work.'),
-    step:active,checkpoint:last,summary:active ? `${done ? `${done.title} is complete. ` : ''}${active.detail ? `${active.detail} ` : ''}Next: ${active.next || active.title}` : 'All steps are complete. Your work is saved.'};
+    openDetails,otherUnfinished,step:active,checkpoint:last,summary:active ? `${done ? `${done.title} is complete. ` : ''}${active.detail ? `${active.detail} ` : ''}${otherUnfinished.length?`Also unfinished: ${otherUnfinished.map(s=>`${s.stepTitle}: ${s.detail}`).join('; ')}. `:''}Next: ${active.next || active.title}` : 'All steps are complete. Your work is saved.'};
 }
 export function recordEvent(task, type, payload={}, now=new Date().toISOString()) {
   task.events.push({id:uid(),type,at:now,...payload}); task.events=task.events.slice(-300); task.updatedAt=now;
@@ -59,7 +61,7 @@ export function suggestCheckpoint(text) {
   const nextClause=clauses.find(s=>/^(next(?:\s+step)?|then|tomorrow|resume with)\s*[:,\-]?\s+/i.test(s));
   const unfinished=clauses.filter(s=>/\b(not yet|not done|not finished|haven['’]?t|hasn['’]?t|isn['’]?t|aren['’]?t|still|unfinished|unresolved|but|need to|needs|waiting|stuck)\b/i.test(s)).join(' ');
   const negative=/\b(not|never|haven['’]?t|hasn['’]?t|isn['’]?t|aren['’]?t|didn['’]?t|unfinished)\b/i.test(note);
-  const complete=!negative && /\b(done|finished|completed|complete)\b/i.test(note);
+  const complete=!negative && !unfinished && /\b(done|finished|completed|complete)\b/i.test(note);
   return {note,unfinished,next:nextClause?nextClause.replace(/^(next(?:\s+step)?|then|tomorrow|resume with)\s*[:,\-]?\s*/i,''):'',complete};
 }
 export function applyChange(state, taskId, operation) {

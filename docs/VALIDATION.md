@@ -4,7 +4,7 @@ This record distinguishes implemented behavior, synthetic tests, browser checks,
 
 ## 2026-11-01 — automated checks
 
-`npm run check`: 18 passing tests, plus ES-module syntax checks.
+`npm run check`: 23 passing tests, plus ES-module syntax checks.
 
 - Step advancement and full completion.
 - Interrupted state persists after JSON serialization and validation.
@@ -19,6 +19,9 @@ This record distinguishes implemented behavior, synthetic tests, browser checks,
 - Perspective transform inversion and geometry rejection.
 - Actual JSFeat ORB/RANSAC tracker recovers a known synthetic translation.
 - Unrelated and textureless frames are rejected.
+- Switching active steps preserves and surfaces earlier unfinished details after reload.
+- Partial completion language with a remaining detail cannot suggest full completion.
+- Device reports allowlist capability/outcome fields and exclude task content.
 
 Illustration-derived fixture check at 320×203: 57 inliers, 0.775 px reprojection error for a known 42×24 px translation in the 1200×760 source. This is one controlled example, not a real-device accuracy benchmark.
 
@@ -32,15 +35,19 @@ Illustration-derived fixture check at 320×203: 57 inliers, 0.775 px reprojectio
 - Imported a clearly labeled synthetic PNG through the actual file chooser.
 - Attached that image to a checkpoint and verified thumbnail persistence after reload.
 - Inspected the 390 px layout; document width equals viewport width (no horizontal overflow).
+- Switched to another active step and verified the prior unfinished detail remains on the main card and in the companion resume packet.
+- Device diagnostics initially show camera/voice as untested despite API availability.
+- Explicit temporary storage probe successfully wrote, read, and cleaned up a localStorage and IndexedDB record in desktop Chrome.
+- Export/import round-trip completed; two workspaces and image evidence retained.
+- Companion interaction opens the correct resume packet in desktop and phone-sized layouts.
+- HTTPS deployment succeeded.
 
 ## Still required before final submission
 
 - Actual iPhone Safari camera permission/start/stop and orientation checks.
 - Actual iPhone microphone/speech availability and denial recovery.
 - Actual workspace photo tracking, occlusion/loss/recovery, and moved-object behavior.
-- Export/import round-trip completed in desktop browser; two workspaces and image evidence retained.
-- Companion interaction opens the correct resume packet; completed in desktop and phone-sized layouts.
-- HTTPS deployment succeeded; offline shell still requires a real phone check.
+- Offline shell and storage require a real phone check.
 - Real working-demo footage; no sample scene may be described as live recognition.
 
 ## Product limitations

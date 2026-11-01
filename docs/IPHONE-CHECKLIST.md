@@ -17,3 +17,5 @@ Open https://threadback-workspace.wirylapel.chatgpt.site in Safari. The first de
 
 Record phone model, iOS version, browser, observed latency, and any tracking failure conditions. Do not infer phone success from the desktop test results.
 
+After testing, open **Settings → Check this device**, run **Test saving a temporary record**, then **Copy report**. Share that report with the phone model/iOS version and any visible errors. It contains capability flags and observed outcomes, with no task names, notes, photos, or audio. Matching counts alone do not prove correct physical alignment; describe what you saw as well.
+

@@ -16,3 +16,22 @@ test('invalid backups and duplicate identifiers are rejected',()=>{assert.throws
 test('malformed markers are removed and untrusted fields are not retained',()=>{const t=make();t.steps[0].marker={x:Infinity,y:.2};t.untrusted='ignored';const s=validateState({version:VERSION,tasks:[t],activeId:'missing'});assert.equal(s.tasks[0].steps[0].marker,null);assert.equal(s.tasks[0].untrusted,undefined);assert.equal(s.activeId,t.id);});
 test('empty and excessive tasks are bounded',()=>{assert.throws(()=>makeTask('',[]));assert.throws(()=>makeTask('Valid',[]));assert.equal(makeTask('a',Array(50).fill('step')).steps.length,30);});
 test('photo provenance survives backup validation and old photos are conservatively labeled',()=>{const t=make();saveCheckpoint(t,{note:'Photo checkpoint.',imageId:'photo-a',imageKind:'camera'});saveCheckpoint(t,{note:'Reference attached.',imageId:'photo-b'});const s=validateState({version:VERSION,tasks:[t],activeId:t.id});assert.equal(s.tasks[0].checkpoints[0].imageKind,'camera');assert.equal(s.tasks[0].checkpoints[1].imageKind,'reference');});
+test('switching steps preserves and surfaces earlier unfinished work after reload',()=>{
+  const t=make();
+  saveCheckpoint(t,{note:'Base positioned, not fastened.',unfinished:'Base is not fastened.',next:'Fasten the base.'});
+  setStepStatus(t,t.steps[1].id,'active');
+  saveCheckpoint(t,{note:'Dividers still loose.',unfinished:'Dividers are loose.',next:'Glue the dividers.'});
+  const restored=validateState({version:VERSION,tasks:[t],activeId:t.id}).tasks[0],packet=resumePacket(restored);
+  assert.equal(packet.unfinished,'Dividers are loose.');
+  assert.equal(packet.nextAction,'Glue the dividers.');
+  assert.deepEqual(packet.otherUnfinished.map(x=>x.detail),['Base is not fastened.']);
+  assert.match(packet.summary,/Build base: Base is not fastened/);
+  setStepStatus(restored,restored.steps[1].id,'done');
+  const after=resumePacket(restored);
+  assert.equal(after.openDetails.length,1);
+  assert.equal(after.openDetails[0].detail,'Base is not fastened.');
+});
+test('positive completion language with a remaining detail never suggests completion',()=>{
+  assert.equal(suggestCheckpoint('I finished positioning, but need to glue it.').complete,false);
+  assert.equal(suggestCheckpoint('The base is finished.').complete,true);
+});
