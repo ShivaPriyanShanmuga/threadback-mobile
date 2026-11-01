@@ -46,7 +46,7 @@ export function saveCheckpoint(task, input, now=new Date().toISOString()) {
   if (input.complete===true && unfinished) throw new Error('Resolve the unfinished detail before confirming completion.');
   if (step) { if (unfinished) step.detail=unfinished; if(next) step.next=next; }
   const checkpoint={id:uid(),at:now,stepId:step?.id || null,note,unfinished,next,
-    source:input.source==='voice'?'voice':'typed',imageId:clean(input.imageId,100)||null,
+    source:input.source==='voice'?'voice':'typed',imageId:clean(input.imageId,100)||null,imageKind:input.imageKind==='camera'?'camera':'reference',
     done:input.complete===true,confirmed:true};
   task.checkpoints.push(checkpoint); task.checkpoints=task.checkpoints.slice(-150);
   if (step && input.complete===true) setStepStatus(task,step.id,'done',now);
@@ -82,7 +82,7 @@ export function validateState(input) {
       return {id:clean(s.id,100),title:clean(s.title,160),status:s.status,detail:clean(s.detail),next:clean(s.next),marker};
     });
     if(steps.filter(s=>s.status==='active').length>1) throw new Error('A task can only have one current step.');
-    const checkpoints=(Array.isArray(t.checkpoints)?t.checkpoints:[]).slice(-150).map(c=>({id:clean(c.id,100)||uid(),at:validDate(c.at),stepId:ids.has(c.stepId)?c.stepId:null,note:clean(c.note,2000),unfinished:clean(c.unfinished),next:clean(c.next),source:c.source==='voice'?'voice':'typed',imageId:clean(c.imageId,100)||null,done:c.done===true,confirmed:c.confirmed===true}));
+    const checkpoints=(Array.isArray(t.checkpoints)?t.checkpoints:[]).slice(-150).map(c=>({id:clean(c.id,100)||uid(),at:validDate(c.at),stepId:ids.has(c.stepId)?c.stepId:null,note:clean(c.note,2000),unfinished:clean(c.unfinished),next:clean(c.next),source:c.source==='voice'?'voice':'typed',imageId:clean(c.imageId,100)||null,imageKind:c.imageKind==='camera'?'camera':'reference',done:c.done===true,confirmed:c.confirmed===true}));
     return {id:clean(t.id,100),title:clean(t.title,100),createdAt:validDate(t.createdAt),updatedAt:validDate(t.updatedAt),status:steps.every(s=>s.status==='done')?'complete':t.status==='paused'?'paused':'active',example:t.example===true,steps,checkpoints,events:(Array.isArray(t.events)?t.events:[]).slice(-300).map(e=>({id:clean(e.id,100)||uid(),type:clean(e.type,30),at:validDate(e.at),label:clean(e.label,2000),stepId:ids.has(e.stepId)?e.stepId:null,status:['todo','active','done'].includes(e.status)?e.status:null})),reference:typeof t.reference==='string'?clean(t.reference,100):null};
   });
   return {version:VERSION,tasks,activeId:tasks.some(t=>t.id===input.activeId)?input.activeId:tasks[0]?.id||null};

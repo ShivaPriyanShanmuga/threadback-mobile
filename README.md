@@ -6,6 +6,12 @@ Threadback preserves the details a checklist forgets: what you completed, what y
 
 Built for **Arbiter Hacks V1 — General Track**. This is a new phone implementation of a previously discussed AR-glasses concept. No glasses implementation is represented as new work here.
 
+[![Check Threadback](https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/workflows/check.yml/badge.svg)](https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/workflows/check.yml)
+
+[Open the first build](https://threadback-workspace.wirylapel.chatgpt.site) · currently private to the owning ChatGPT account.
+
+![Illustrated example workspace with real Threadback UI](docs/images/workspace.png)
+
 ## Development
 
 Node 22+; no dependency installation or build step is required.

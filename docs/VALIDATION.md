@@ -4,7 +4,7 @@ This record distinguishes implemented behavior, synthetic tests, browser checks,
 
 ## 2026-11-01 — automated checks
 
-`npm run check`: 17 passing tests, plus ES-module syntax checks.
+`npm run check`: 18 passing tests, plus ES-module syntax checks.
 
 - Step advancement and full completion.
 - Interrupted state persists after JSON serialization and validation.
@@ -38,8 +38,9 @@ Illustration-derived fixture check at 320×203: 57 inliers, 0.775 px reprojectio
 - Actual iPhone Safari camera permission/start/stop and orientation checks.
 - Actual iPhone microphone/speech availability and denial recovery.
 - Actual workspace photo tracking, occlusion/loss/recovery, and moved-object behavior.
-- Export/import round-trip and screenshot/companion interaction checks.
-- Hosted deployment and offline shell checks.
+- Export/import round-trip completed in desktop browser; two workspaces and image evidence retained.
+- Companion interaction opens the correct resume packet; completed in desktop and phone-sized layouts.
+- HTTPS deployment succeeded; offline shell still requires a real phone check.
 - Real working-demo footage; no sample scene may be described as live recognition.
 
 ## Product limitations
