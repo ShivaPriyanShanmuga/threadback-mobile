@@ -1,5 +1,11 @@
 # Changelog
 
+## Private Cloudflare deployment preparation — 2026-11-01
+
+- Added a separate Workers deployment for the existing app, using Cloudflare Access JWT verification and an exact-email check before every static asset.
+- Added eight security/routing tests, a reproducible Wrangler dry build, pinned tooling, and GitHub Actions checks. No authentication configuration or credential is committed.
+- Cloudflare account sign-in succeeded. Zero Trust Free plan selection and Wrangler OAuth authorization are waiting for explicit approval. No new Cloudflare production app URL is claimed yet.
+
 ## Submission preparation — 2026-11-01
 
 - Created the actual Devpost draft, saved the story and GitHub link, uploaded two explicitly labeled illustration-based UI screenshots, and verified the rendered preview.

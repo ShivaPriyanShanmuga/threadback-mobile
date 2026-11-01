@@ -1,0 +1,8 @@
+{
+  "extends": "./wrangler.jsonc",
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "https://YOUR-TEAM.cloudflareaccess.com",
+    "ACCESS_AUD": "COPY-THE-ACCESS-APPLICATION-AUD",
+    "ACCESS_ALLOWED_EMAIL": "YOUR-EMAIL@example.com"
+  }
+}

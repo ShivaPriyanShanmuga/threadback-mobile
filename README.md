@@ -29,6 +29,8 @@ The core workspace is implemented: create tasks, review typed/voice checkpoints,
 
 ## Architecture
 
+Private deployment on the user's own Cloudflare account is being prepared in [deployments/cloudflare](deployments/cloudflare/README.md). It uses Cloudflare Access plus a signed-token and exact-email check before serving app assets. The existing Sites link remains private. A new Cloudflare URL will be recorded only after live access verification.
+
 - Buildless HTML/CSS/ES modules; camera capture through `getUserMedia`.
 - Local task state and snapshots; no account required for local data.
 - Explicit event history, checkpoint review, reversible progress updates, and resume packets.

@@ -1,4 +1,7 @@
 node_modules/
+.wrangler/
+.dev.vars*
+wrangler.private.jsonc
 .env*
 !.env.example
 .sites-runtime/
