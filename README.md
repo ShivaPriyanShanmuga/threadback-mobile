@@ -19,7 +19,7 @@ Open the printed localhost URL on this computer. An iPhone needs the deployed HT
 
 ## Build status
 
-Implementation in progress. See [docs/ROADMAP.md](docs/ROADMAP.md) and [CHANGELOG.md](CHANGELOG.md). The included example workspace is an illustration and is always labeled as an example. It is not a live-camera or AI-recognition demonstration.
+The core workspace is implemented: create tasks, review typed/voice checkpoints, preserve unfinished details, pause/resume, save photo evidence, place markers, undo changes, and export/import local backups. See [docs/ROADMAP.md](docs/ROADMAP.md), [docs/VALIDATION.md](docs/VALIDATION.md), and [CHANGELOG.md](CHANGELOG.md) for verified behavior and remaining work. The included example workspace is an illustration and is always labeled as an example. It is not a live-camera or AI-recognition demonstration.
 
 ## Architecture
 
@@ -28,6 +28,7 @@ Implementation in progress. See [docs/ROADMAP.md](docs/ROADMAP.md) and [CHANGELO
 - Explicit event history, checkpoint review, reversible progress updates, and resume packets.
 - JSFeat (MIT) for local planar feature matching; no claim of general room-scale 3D tracking.
 - Voice support depends on browser speech-recognition availability; typing remains available.
+- Note extraction currently uses explicit text cues, not a cloud AI model. Photos are not analyzed for task completion.
 
 ## Provenance
 

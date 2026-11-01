@@ -17,9 +17,10 @@ export function currentStep(task) { return task?.steps.find(s=>s.status==='activ
 export function progress(task) { return task?.steps.length ? Math.round(task.steps.filter(s=>s.status==='done').length/task.steps.length*100) : 0; }
 export function resumePacket(task) {
   const active = currentStep(task);
-  const done = [...task.steps].reverse().find(s=>s.status==='done');
+  const completedEvent = [...task.events].reverse().find(e=>e.type==='step'&&e.status==='done'&&task.steps.some(s=>s.id===e.stepId&&s.status==='done'));
+  const done = task.steps.find(s=>s.id===completedEvent?.stepId) || [...task.steps].reverse().find(s=>s.status==='done');
   const last = task.checkpoints.at(-1);
-  return {lastCompleted:done?.title || 'No step completed yet',unfinished:active?.detail || last?.unfinished || '',
+  return {lastCompleted:done?.title || 'No step completed yet',unfinished:active?.detail || '',
     nextAction:active?.next || (active ? active.title : 'All steps are complete. Review your finished work.'),
     step:active,checkpoint:last,summary:active ? `${done ? `${done.title} is complete. ` : ''}${active.detail ? `${active.detail} ` : ''}Next: ${active.next || active.title}` : 'All steps are complete. Your work is saved.'};
 }
@@ -42,6 +43,7 @@ export function saveCheckpoint(task, input, now=new Date().toISOString()) {
   const step = task.steps.find(s=>s.id===input.stepId) || currentStep(task);
   const note=clean(input.note,2000), unfinished=clean(input.unfinished), next=clean(input.next);
   if (!note && !unfinished && !next) throw new Error('Add a note, unfinished detail, or next action.');
+  if (input.complete===true && unfinished) throw new Error('Resolve the unfinished detail before confirming completion.');
   if (step) { if (unfinished) step.detail=unfinished; if(next) step.next=next; }
   const checkpoint={id:uid(),at:now,stepId:step?.id || null,note,unfinished,next,
     source:input.source==='voice'?'voice':'typed',imageId:clean(input.imageId,100)||null,
@@ -81,7 +83,7 @@ export function validateState(input) {
     });
     if(steps.filter(s=>s.status==='active').length>1) throw new Error('A task can only have one current step.');
     const checkpoints=(Array.isArray(t.checkpoints)?t.checkpoints:[]).slice(-150).map(c=>({id:clean(c.id,100)||uid(),at:validDate(c.at),stepId:ids.has(c.stepId)?c.stepId:null,note:clean(c.note,2000),unfinished:clean(c.unfinished),next:clean(c.next),source:c.source==='voice'?'voice':'typed',imageId:clean(c.imageId,100)||null,done:c.done===true,confirmed:c.confirmed===true}));
-    return {id:clean(t.id,100),title:clean(t.title,100),createdAt:validDate(t.createdAt),updatedAt:validDate(t.updatedAt),status:steps.every(s=>s.status==='done')?'complete':t.status==='paused'?'paused':'active',example:t.example===true,steps,checkpoints,events:(Array.isArray(t.events)?t.events:[]).slice(-300).map(e=>({id:clean(e.id,100)||uid(),type:clean(e.type,30),at:validDate(e.at),label:clean(e.label,2000)})),reference:typeof t.reference==='string'?clean(t.reference,100):null};
+    return {id:clean(t.id,100),title:clean(t.title,100),createdAt:validDate(t.createdAt),updatedAt:validDate(t.updatedAt),status:steps.every(s=>s.status==='done')?'complete':t.status==='paused'?'paused':'active',example:t.example===true,steps,checkpoints,events:(Array.isArray(t.events)?t.events:[]).slice(-300).map(e=>({id:clean(e.id,100)||uid(),type:clean(e.type,30),at:validDate(e.at),label:clean(e.label,2000),stepId:ids.has(e.stepId)?e.stepId:null,status:['todo','active','done'].includes(e.status)?e.status:null})),reference:typeof t.reference==='string'?clean(t.reference,100):null};
   });
   return {version:VERSION,tasks,activeId:tasks.some(t=>t.id===input.activeId)?input.activeId:tasks[0]?.id||null};
 }
