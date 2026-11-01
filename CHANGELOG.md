@@ -1,5 +1,11 @@
 # Changelog
 
+## Submission preparation — 2026-11-01
+
+- Created the actual Devpost draft, saved the story and GitHub link, uploaded two explicitly labeled illustration-based UI screenshots, and verified the rendered preview.
+- Inspected finalization: required Rules/Terms checkbox remains unchecked; real working-demo video and actual iPhone validation are pending.
+- Confirmed the currently signed-in Chrome account is denied by the private hosting policy. Preserve private access at the user's explicit request.
+
 ## 0.2.0 — 2026-11-01
 
 - Keep earlier unfinished details visible when another step becomes active, including in the resume summary and read-aloud text.

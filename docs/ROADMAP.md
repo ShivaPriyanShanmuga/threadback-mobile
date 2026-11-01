@@ -25,6 +25,7 @@
 - [x] Public repository with reproducible instructions and clear provenance.
 - [ ] Honest 2–3 minute working-demo video hosted on YouTube/Vimeo.
 - [x] Devpost project description, screenshots, limitations, and future work.
+- [x] Saved and previewed Devpost draft: https://devpost.com/software/threadback-oadtch (DRAFT, 3/4 steps done).
 - [ ] Eligibility and required agreement checks resolved at submission.
 - [ ] Submission receipt verified.
 
@@ -32,5 +33,7 @@ No item is marked complete without evidence. Hackathon results and judging are e
 
 
 Live build: https://threadback-workspace.wirylapel.chatgpt.site (owner-private).
-GitHub CI passed for a9b4f5984a1d06aabdfcc66a2d5c0f491fa22a5a: https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/runs/41281353367
+GitHub CI passed for implementation commit 0260a0149e862d66563361a3f6ba14e71fdf915a: https://github.com/ShivaPriyanShanmuga/threadback-mobile/actions/runs/41308447757
 Camera/voice and tracking are implemented, but their working-product boxes remain unchecked until actual iPhone verification.
+
+Devpost draft creation succeeded after refreshing the reCAPTCHA connection failure. The final terms checkbox remains unchecked and the video URL is empty. No track selector was present in the inspected registration/finalization forms; confirm General routing before submitting. Hosting remains private by explicit user preference; phone testing needs the owning ChatGPT account, as the current Chrome account is denied access.
